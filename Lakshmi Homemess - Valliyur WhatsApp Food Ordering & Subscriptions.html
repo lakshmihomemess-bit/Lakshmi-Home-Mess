@@ -1,0 +1,1428 @@
+<!DOCTYPE html>
+<html lang="ta">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LAKSHMI HOMEMESS | வீட்டுச் சாப்பாடு &amp; Mess Subscriptions - Valliyur</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Inter, Playfair Display & Noto Sans Tamil -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+Tamil:wght@400;500;600;700;800&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'Noto Sans Tamil', 'sans-serif'],
+                        tamil: ['Noto Sans Tamil', 'Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    colors: {
+                        cream: '#FDFBF4',
+                        warmYellow: '#FFF8E1',
+                        forest: {
+                            DEFAULT: '#1B4332',
+                            light: '#2D6A4F',
+                            pale: '#E8F5E9',
+                        },
+                        crimson: {
+                            DEFAULT: '#8B1E24',
+                            light: '#A8242B',
+                            pale: '#FDECEC',
+                        },
+                        marigold: {
+                            DEFAULT: '#FFC300',
+                            warm: '#F4A261',
+                            dark: '#D97706',
+                        },
+                        whatsapp: '#25D366',
+                        whatsappDark: '#128C7E',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Hide scrollbar for horizontal category bar */
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+        /* Banana leaf subtle diagonal stripe accent */
+        .banana-leaf-bg {
+            background-color: #1B4332;
+            background-image: linear-gradient(135deg, rgba(45, 106, 79, 0.45) 25%, transparent 25%),
+                              linear-gradient(225deg, rgba(45, 106, 79, 0.45) 25%, transparent 25%);
+            background-size: 28px 28px;
+        }
+    </style>
+</head>
+<body class="bg-cream text-stone-800 font-sans antialiased pb-28">
+
+    <!-- Top Utility / Owner Access Bar -->
+    <div class="bg-forest text-white border-b border-emerald-800 px-4 py-2 text-xs">
+        <div class="max-w-5xl mx-auto flex flex-wrap items-center justify-between gap-2">
+            <div class="flex items-center gap-3">
+                <a href="tel:+919597871106" id="top-phone-link" class="inline-flex items-center gap-1.5 text-marigold font-bold hover:underline">
+                    <i class="fa-solid fa-phone-volume"></i>
+                    <span id="top-phone-display">95978 71106</span>
+                </a>
+                <span class="hidden sm:inline text-emerald-300">|</span>
+                <span class="hidden sm:inline text-emerald-100">WhatsApp Orders Only • Valliyur</span>
+            </div>
+
+            <div class="flex items-center gap-2">
+                <span id="owner-status-badge" class="hidden bg-marigold text-stone-950 font-extrabold px-2.5 py-0.5 rounded-full text-[11px]">
+                    <i class="fa-solid fa-unlock mr-1"></i>Owner Mode Active
+                </span>
+                <button onclick="handleOwnerButtonClick()" id="owner-toggle-btn" class="bg-white/15 hover:bg-white/25 text-white font-semibold px-3 py-1 rounded-lg transition flex items-center gap-1.5 border border-white/20">
+                    <i class="fa-solid fa-user-shield text-marigold"></i>
+                    <span id="owner-btn-text">Owner Mode / நிர்வாகி</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Section (Modeled after LAKSHMI HOMEMESS Flyer) -->
+    <header class="relative overflow-hidden bg-gradient-to-b from-warmYellow via-cream to-cream border-b-2 border-amber-200/80">
+        <!-- Decorative Top Leaf Corners -->
+        <div class="max-w-5xl mx-auto px-4 pt-6 pb-8 sm:py-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
+                
+                <!-- Left / Main Flyer Branding -->
+                <div class="lg:col-span-7 space-y-4">
+                    <!-- Brand Emblem + Name -->
+                    <div class="flex items-center gap-3.5">
+                        <!-- Custom SVG House & Steaming Bowl Logo matching flyer -->
+                        <div class="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-white shadow-md border-2 border-forest/20 flex items-center justify-center shrink-0 p-1.5">
+                            <svg viewBox="0 0 100 100" class="w-full h-full" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Lakshmi Homemess Logo">
+                                <!-- Roof -->
+                                <path d="M14 46L50 16L86 46" stroke="#1B4332" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+                                <!-- Chimney -->
+                                <path d="M68 29V20H76V36" fill="#1B4332"/>
+                                <!-- House Walls -->
+                                <path d="M24 44V74H76V44" stroke="#1B4332" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+                                <!-- Window -->
+                                <rect x="44" y="32" width="12" height="12" rx="1.5" fill="#2D6A4F"/>
+                                <!-- Steam lines -->
+                                <path d="M42 52C42 49 44 48 44 45" stroke="#8B1E24" stroke-width="2.5" stroke-linecap="round"/>
+                                <path d="M50 51C50 48 52 47 52 44" stroke="#8B1E24" stroke-width="2.5" stroke-linecap="round"/>
+                                <path d="M58 52C58 49 60 48 60 45" stroke="#8B1E24" stroke-width="2.5" stroke-linecap="round"/>
+                                <!-- Hot Bowl -->
+                                <path d="M35 56H65C65 65 58 71 50 71C42 71 35 65 35 56Z" fill="#1B4332"/>
+                                <!-- Banana Leaf Swoosh Underneath -->
+                                <path d="M16 79C35 88 66 87 86 73C68 80 40 80 16 79Z" fill="#2D6A4F"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <div class="inline-flex items-center gap-1.5 bg-crimson text-white text-[11px] font-bold px-2.5 py-0.5 rounded-full mb-1 shadow-2xs">
+                                <i class="fa-solid fa-location-dot text-marigold"></i>
+                                <span>வள்ளியூரில் • VALLIYUR</span>
+                            </div>
+                            <h1 class="font-serif text-2xl sm:text-4xl font-extrabold text-forest tracking-tight leading-none">
+                                LAKSHMI HOMEMESS
+                            </h1>
+                            <p class="font-tamil text-sm sm:text-base font-bold text-crimson mt-1">
+                                லட்சுமி ஹோம்மெஸ் • சுத்தமான வீட்டுச் சாப்பாடு
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Flyer Headline & Slogan -->
+                    <div class="bg-white/90 backdrop-blur-xs rounded-2xl p-4 sm:p-5 border border-amber-300/80 shadow-sm space-y-2">
+                        <h2 class="font-tamil text-xl sm:text-2xl font-extrabold text-crimson leading-snug">
+                            “வீட்டுச் சாப்பாடு சாப்பிட்ட திருப்தி வேணுமா?”
+                        </h2>
+                        <p class="font-tamil text-sm sm:text-base font-semibold text-stone-800 leading-relaxed">
+                            அம்மா கை மணத்தில் சுத்தமான, சுவையான மற்றும் சுகாதாரமான <span class="bg-marigold/60 px-2 py-0.5 rounded-md font-extrabold text-crimson">ஹோம்லி சாப்பாடு! ❤️</span>
+                        </p>
+                        <p class="text-xs sm:text-sm text-stone-600">
+                            Freshly prepared daily in Valliyur with authentic motherly care, zero artificial colors, and traditional South Indian homestyle recipes.
+                        </p>
+                    </div>
+
+                    <!-- Address & Direct WhatsApp Callout -->
+                    <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
+                        <a href="https://maps.app.goo.gl/5KKhLCYmRBTZXvYo9" target="_blank" rel="noopener noreferrer" class="js-map-link flex-1 bg-forest text-white rounded-2xl p-3.5 flex items-start gap-3 hover:bg-forest-light transition shadow-sm group">
+                            <div class="w-9 h-9 rounded-xl bg-white/15 flex items-center justify-center shrink-0 mt-0.5">
+                                <i class="fa-solid fa-map-location-dot text-marigold text-base"></i>
+                            </div>
+                            <div class="text-xs leading-relaxed">
+                                <span class="text-emerald-200 font-semibold block">முகவரி / Kitchen Address:</span>
+                                <span class="font-bold text-white block">📍 காமராஜ் நகர் 3-வது தெரு, வள்ளியூர் • View on Google Maps</span>
+                                <span class="text-emerald-100 group-hover:underline">Kamaraj Nagar 3rd Street, Valliyur <i class="fa-solid fa-arrow-up-right-from-square text-[10px] ml-0.5"></i></span>
+                            </div>
+                        </a>
+
+                        <div class="bg-marigold rounded-2xl p-3.5 text-stone-950 flex flex-col justify-center shrink-0 shadow-sm border border-amber-400">
+                            <span class="text-[11px] font-bold uppercase tracking-wider text-crimson">தொடர்புக்கு / ஆர்டர் செய்ய:</span>
+                            <a href="https://wa.me/919597871106" id="hero-wa-link" target="_blank" rel="noopener noreferrer" class="text-xl sm:text-2xl font-extrabold tracking-tight flex items-center gap-2 mt-0.5 hover:opacity-85">
+                                <i class="fa-brands fa-whatsapp text-forest text-2xl"></i>
+                                <span id="hero-phone-display">9597871106</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column: Google Reviews Automatic Showcase Card -->
+                <div class="lg:col-span-5">
+                    <div class="bg-white rounded-3xl p-5 border-2 border-amber-200 shadow-lg relative overflow-hidden">
+                        <div class="flex items-center justify-between gap-2 pb-3 mb-3 border-b border-stone-100">
+                            <div class="flex items-center gap-2.5">
+                                <!-- Google G Badge -->
+                                <div class="w-10 h-10 rounded-full bg-stone-50 border border-stone-200 flex items-center justify-center shadow-2xs shrink-0">
+                                    <svg class="w-5 h-5" viewBox="0 0 24 24">
+                                        <path fill="#4285F4" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.82-2.4 3.68v3.05h3.88c2.27-2.09 3.665-5.17 3.665-9.17z"/>
+                                        <path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.05c-1.08.72-2.45 1.16-4.05 1.16-3.12 0-5.77-2.11-6.72-4.96H1.29v3.14C3.26 21.3 7.31 24 12 24z"/>
+                                        <path fill="#FBBC05" d="M5.28 14.24c-.24-.72-.38-1.49-.38-2.24s.14-1.52.38-2.24V6.62H1.29C.47 8.24 0 10.06 0 12s.47 3.76 1.29 5.38l3.99-3.14z"/>
+                                        <path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.31 0 3.26 2.7 1.29 6.62l3.99 3.14c.95-2.85 3.6-4.96 6.72-4.96z"/>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <div class="flex items-center gap-1.5">
+                                        <span class="font-extrabold text-lg text-stone-900">4.9</span>
+                                        <div class="flex text-amber-400 text-xs">
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                        </div>
+                                    </div>
+                                    <p class="text-[11px] font-semibold text-stone-500">Verified Google Reviews • Valliyur</p>
+                                </div>
+                            </div>
+                            <span class="text-[10px] font-bold uppercase tracking-wider bg-emerald-100 text-forest px-2.5 py-1 rounded-full">
+                                Top Rated
+                            </span>
+                        </div>
+
+                        <!-- Auto-Rotating Review Carousel -->
+                        <div id="google-review-display" class="min-h-[115px] flex flex-col justify-between transition-opacity duration-300">
+                            <!-- Injected dynamically -->
+                        </div>
+
+                        <!-- Review Pagination Dots & Google Maps Link -->
+                        <div class="mt-4 pt-3 border-t border-stone-100 flex items-center justify-between gap-2">
+                            <div id="review-dots" class="flex items-center gap-1.5">
+                                <!-- Dots injected dynamically -->
+                            </div>
+                            <a href="https://maps.app.goo.gl/5KKhLCYmRBTZXvYo9" target="_blank" rel="noopener noreferrer" class="js-map-link inline-flex items-center gap-1.5 text-xs font-bold text-forest hover:text-crimson transition">
+                                <span>Write a Google Review / Google-ல் மதிப்பாய்வு எழுதவும்</span>
+                                <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </header>
+
+    <!-- OWNER CUSTOMIZATION DASHBOARD (Visible only when Owner Mode is unlocked) -->
+    <section id="owner-panel" class="hidden bg-amber-50 border-b-4 border-marigold shadow-inner">
+        <div class="max-w-5xl mx-auto px-4 py-6 space-y-6">
+            <div class="flex flex-wrap items-center justify-between gap-3 border-b border-amber-200 pb-4">
+                <div>
+                    <span class="bg-crimson text-white text-[10px] font-bold uppercase tracking-wider px-2.5 py-0.5 rounded-full">Owner Control Panel</span>
+                    <h2 class="text-xl font-extrabold text-stone-900 mt-1">Customize Menu, Prices &amp; Store Details</h2>
+                    <p class="text-xs text-stone-600">Changes save automatically in your browser. Update prices, add today's specials, or mark items sold out.</p>
+                </div>
+                <div class="flex items-center gap-2">
+                    <button onclick="resetDefaultMenu()" class="px-3.5 py-2 rounded-xl border border-rose-300 bg-white text-rose-700 hover:bg-rose-50 text-xs font-bold transition">
+                        <i class="fa-solid fa-rotate-left mr-1"></i> Reset Defaults
+                    </button>
+                    <button onclick="lockOwnerMode()" class="px-4 py-2 rounded-xl bg-stone-900 text-white hover:bg-stone-800 text-xs font-bold transition">
+                        <i class="fa-solid fa-lock mr-1"></i> Exit Owner Mode
+                    </button>
+                </div>
+            </div>
+
+            <!-- Grid: Add New Dish + Update WhatsApp Number / Add Review -->
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-5">
+                
+                <!-- Card 1: Add New Menu Item -->
+                <form onsubmit="ownerAddMenuItem(event)" class="lg:col-span-2 bg-white rounded-2xl p-4 sm:p-5 border border-amber-200 shadow-xs space-y-3.5">
+                    <h3 class="font-bold text-sm uppercase tracking-wider text-forest flex items-center gap-2">
+                        <i class="fa-solid fa-circle-plus text-marigold-dark"></i> Add New Dish to Menu
+                    </h3>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                        <div>
+                            <label class="block text-xs font-semibold text-stone-600 mb-1">Dish Name (English / Tamil) *</label>
+                            <input type="text" id="new-item-name" required placeholder="e.g., Fish Curry Meals / மீன் குழம்பு சாப்பாடு" class="w-full px-3 py-2 rounded-xl border border-stone-300 text-sm focus:outline-none focus:border-forest">
+                        </div>
+                        <div class="grid grid-cols-2 gap-2">
+                            <div>
+                                <label class="block text-xs font-semibold text-stone-600 mb-1">Price (₹) *</label>
+                                <input type="number" id="new-item-price" min="1" required placeholder="120" class="w-full px-3 py-2 rounded-xl border border-stone-300 text-sm focus:outline-none focus:border-forest">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-semibold text-stone-600 mb-1">Category *</label>
+                                <select id="new-item-cat" class="w-full px-2.5 py-2 rounded-xl border border-stone-300 text-sm bg-white focus:outline-none focus:border-forest">
+                                    <option value="breakfast">Breakfast / டிபன்</option>
+                                    <option value="lunch" selected>Lunch / மதிய உணவு</option>
+                                    <option value="dinner">Dinner / இரவு உணவு</option>
+                                    <option value="nonveg">Non-Veg / அசைவம்</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 items-end">
+                        <div class="sm:col-span-2">
+                            <label class="block text-xs font-semibold text-stone-600 mb-1">Short Description</label>
+                            <input type="text" id="new-item-desc" placeholder="e.g., Fresh Nagercoil style fish curry with rice, poriyal & rasam" class="w-full px-3 py-2 rounded-xl border border-stone-300 text-sm focus:outline-none focus:border-forest">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold text-stone-600 mb-1">Diet Type</label>
+                            <select id="new-item-diet" class="w-full px-3 py-2 rounded-xl border border-stone-300 text-sm bg-white focus:outline-none focus:border-forest">
+                                <option value="veg">Pure Veg (சைவம்)</option>
+                                <option value="nonveg">Non-Veg (அசைவம்)</option>
+                <!-- Card 2: Store WhatsApp, Google Maps Link & Review Settings -->
+                <div class="bg-white rounded-2xl p-4 sm:p-5 border border-amber-200 shadow-xs space-y-4 flex flex-col justify-between">
+                    <form onsubmit="ownerUpdatePhone(event)" class="space-y-2.5">
+                        <h3 class="font-bold text-sm uppercase tracking-wider text-forest flex items-center gap-2">
+                            <i class="fa-brands fa-whatsapp text-whatsapp text-base"></i> Order WhatsApp Number
+                        </h3>
+                        <div class="flex items-center rounded-xl border border-stone-300 overflow-hidden">
+                            <span class="bg-stone-100 px-3 py-2 text-xs font-bold text-stone-600 border-r border-stone-300">+91</span>
+                            <input type="tel" id="owner-wa-input" maxlength="10" pattern="[0-9]{10}" required class="w-full px-3 py-2 text-sm font-mono focus:outline-none">
+                        </div>
+                        <button type="submit" class="w-full bg-whatsapp hover:bg-whatsappDark text-white font-bold py-2 rounded-xl text-xs shadow-2xs transition">
+                            Update WhatsApp Number
+                        </button>
+                    </form>
+
+                    <form onsubmit="ownerUpdateMapLink(event)" class="space-y-2 pt-3 border-t border-stone-100">
+                        <h3 class="font-bold text-xs uppercase tracking-wider text-forest flex items-center gap-1.5">
+                            <i class="fa-solid fa-location-dot text-crimson"></i> Google Maps Link
+                        </h3>
+                        <input type="url" id="owner-map-input" required placeholder="https://maps.app.goo.gl/5KKhLCYmRBTZXvYo9" class="w-full px-3 py-1.5 rounded-lg border border-stone-300 text-xs font-mono focus:outline-none focus:border-forest">
+                        <button type="submit" class="w-full bg-forest hover:bg-forest-light text-white font-bold py-1.5 rounded-lg text-xs transition">
+                            Update Google Maps Link
+                        </button>
+                    </form>
+
+                    <form onsubmit="ownerAddReview(event)" class="space-y-2 pt-3 border-t border-stone-100">
+                        <h3 class="font-bold text-xs uppercase tracking-wider text-stone-700">
+                            <i class="fa-solid fa-star text-amber-400 mr-1"></i> Add Featured Google Review
+                        </h3>
+                        <input type="text" id="new-rev-author" required placeholder="Customer Name (e.g., Arun K.)" class="w-full px-3 py-1.5 rounded-lg border border-stone-300 text-xs">
+                        <input type="text" id="new-rev-text" required placeholder="Review comment..." class="w-full px-3 py-1.5 rounded-lg border border-stone-300 text-xs">
+                        <button type="submit" class="w-full bg-stone-800 hover:bg-stone-900 text-white font-semibold py-1.5 rounded-lg text-xs transition">
+                            Publish Review
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content Container -->
+    <main class="max-w-5xl mx-auto px-4 pt-7 space-y-10">
+
+        <!-- SECTION 1: OUR SERVICES (SUBSCRIPTIONS & PARTY CATERING — WHATSAPP ONLY, NO PRICES) -->
+        <section aria-labelledby="services-heading" class="space-y-4">
+            <div class="text-center max-w-2xl mx-auto">
+                <span class="inline-block bg-forest text-marigold text-xs font-extrabold px-4 py-1 rounded-full tracking-wide shadow-2xs">
+                    ✨ எங்களின் சேவைகள் • OUR SPECIAL SERVICES ✨
+                </span>
+                <h2 id="services-heading" class="font-tamil text-xl sm:text-2xl font-extrabold text-stone-900 mt-2">
+                    Monthly Mess Subscriptions &amp; Party Orders
+                </h2>
+                <p class="text-xs sm:text-sm text-stone-600 mt-1">
+                    Customized homestyle meal plans &amp; event catering. Tap below to enquire directly on WhatsApp.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                
+                <!-- Card A: Daily / Monthly Subscription Food Plan (NO PRICES SHOWN) -->
+                <div class="bg-gradient-to-br from-amber-50 to-yellow-100/80 rounded-3xl p-5 sm:p-6 border-2 border-amber-300 shadow-sm flex flex-col justify-between gap-4">
+                    <div class="space-y-3">
+                        <div class="flex items-start justify-between gap-3">
+                            <div class="w-12 h-12 rounded-2xl bg-forest text-marigold flex items-center justify-center text-xl shrink-0 shadow-xs">
+                                <i class="fa-solid fa-graduation-cap"></i>
+                            </div>
+                            <span class="bg-crimson text-white text-[11px] font-bold px-3 py-1 rounded-full">
+                                WhatsApp Enquiry Only
+                            </span>
+                        </div>
+
+                        <div>
+                            <h3 class="font-tamil text-lg sm:text-xl font-extrabold text-crimson leading-snug">
+                                பேச்சுலர்கள் &amp; கல்லூரி மாணவர்களுக்கு தினசரி / மாத அடிப்படையில் சாப்பாடு
+                            </h3>
+                            <p class="font-bold text-stone-900 text-sm mt-1">
+                                Daily &amp; Monthly Homestyle Food Subscription Plans
+                            </p>
+                            <p class="text-xs text-stone-700 mt-1 leading-relaxed">
+                                Specially designed for Bachelors, Working Professionals &amp; College Students in Valliyur. Hygienic home-cooked meals delivered on time without missing home food!
+                            </p>
+                        </div>
+
+                        <!-- Interactive Plan Selectors (No Prices) -->
+                        <div class="bg-white/85 rounded-2xl p-3.5 border border-amber-200 space-y-2.5 text-xs">
+                            <div class="grid grid-cols-2 gap-2">
+                                <div>
+                                    <label class="block font-bold text-stone-700 mb-1">Plan Duration</label>
+                                    <select id="sub-duration" class="w-full px-2.5 py-2 rounded-xl border border-stone-300 bg-white font-semibold text-stone-800">
+                                        <option value="Monthly Plan (மாத சந்தா)">Monthly Plan (மாத சந்தா)</option>
+                                        <option value="Weekly Plan (வார சந்தா)">Weekly Plan (வார சந்தா)</option>
+                                        <option value="Daily Tiffin/Meals (தினசரி)">Daily Basis (தினசரி)</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label class="block font-bold text-stone-700 mb-1">Food Preference</label>
+                                    <select id="sub-diet" class="w-full px-2.5 py-2 rounded-xl border border-stone-300 bg-white font-semibold text-stone-800">
+                                        <option value="Veg & Non-Veg (சைவம் & அசைவம்)">Veg &amp; Non-Veg</option>
+                                        <option value="Pure Veg Only (சைவம் மட்டும்)">Pure Veg (சைவம்)</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div>
+                                <label class="block font-bold text-stone-700 mb-1">Meals Required</label>
+                                <select id="sub-meals" class="w-full px-2.5 py-2 rounded-xl border border-stone-300 bg-white font-semibold text-stone-800">
+                                    <option value="Lunch + Dinner (மதியம் & இரவு)">Lunch + Dinner (மதியம் &amp; இரவு)</option>
+                                    <option value="Breakfast + Lunch + Dinner (3 வேளை)">All 3 Meals (காலை, மதியம் &amp; இரவு)</option>
+                                    <option value="Lunch Only (மதிய உணவு மட்டும்)">Lunch Only (மதிய உணவு)</option>
+                                    <option value="Dinner Only (இரவு உணவு மட்டும்)">Dinner Only (இரவு உணவு)</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button onclick="enquireSubscriptionWhatsApp()" class="w-full bg-whatsapp hover:bg-whatsappDark text-white font-bold py-3.5 px-4 rounded-2xl shadow-md transition flex items-center justify-center gap-2 text-sm">
+                        <i class="fa-brands fa-whatsapp text-xl"></i>
+                        <span>Enquire Subscription Plan on WhatsApp</span>
+                    </button>
+                </div>
+
+                <!-- Card B: Functions & Party Orders (NO PRICES SHOWN) -->
+                <div class="bg-gradient-to-br from-rose-50 to-orange-50/90 rounded-3xl p-5 sm:p-6 border-2 border-rose-200 shadow-sm flex flex-col justify-between gap-4">
+                    <div class="space-y-3">
+                        <div class="flex items-start justify-between gap-3">
+                            <div class="w-12 h-12 rounded-2xl bg-crimson text-marigold flex items-center justify-center text-xl shrink-0 shadow-xs">
+                                <i class="fa-solid fa-bell-concierge"></i>
+                            </div>
+                            <span class="bg-forest text-white text-[11px] font-bold px-3 py-1 rounded-full">
+                                Bulk &amp; Event Orders
+                            </span>
+                        </div>
+
+                        <div>
+                            <h3 class="font-tamil text-lg sm:text-xl font-extrabold text-crimson leading-snug">
+                                விசேஷங்கள் மற்றும் பார்ட்டிகளுக்கு சைவம் &amp; அசைவ ஆர்டர்கள்
+                            </h3>
+                            <p class="font-bold text-stone-900 text-sm mt-1">
+                                Home Functions, Family Gatherings &amp; Party Catering
+                            </p>
+                            <p class="text-xs text-stone-700 mt-1 leading-relaxed">
+                                Planning a birthday, family function, office lunch, or housewarming in Valliyur? Order authentic banana-leaf Veg feasts or Non-Veg biriyani &amp; curry platters cooked fresh to order.
+                            </p>
+                        </div>
+
+                        <!-- Interactive Party Selectors (No Prices) -->
+                        <div class="bg-white/85 rounded-2xl p-3.5 border border-rose-200 space-y-2.5 text-xs">
+                            <div class="grid grid-cols-2 gap-2">
+                                <div>
+                                    <label class="block font-bold text-stone-700 mb-1">Menu Type</label>
+                                    <select id="party-menu-type" class="w-full px-2.5 py-2 rounded-xl border border-stone-300 bg-white font-semibold text-stone-800">
+                                        <option value="Veg & Non-Veg Feast (சைவம் & அசைவம்)">Veg &amp; Non-Veg</option>
+                                        <option value="Pure Veg Banana Leaf Feast (சைவ விருந்து)">Pure Veg Feast</option>
+                                        <option value="Non-Veg Biriyani & Gravy (அசைவ விருந்து)">Non-Veg Special</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label class="block font-bold text-stone-700 mb-1">Approx. Guests</label>
+                                    <select id="party-guests" class="w-full px-2.5 py-2 rounded-xl border border-stone-300 bg-white font-semibold text-stone-800">
+                                        <option value="10 - 20 Members">10 – 20 Members</option>
+                                        <option value="20 - 50 Members">20 – 50 Members</option>
+                                        <option value="50 - 100+ Members">50 – 100+ Members</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div>
+                                <label class="block font-bold text-stone-700 mb-1">Occasion / Event Date (Optional)</label>
+                                <input type="text" id="party-occasion" placeholder="e.g., Family Function this Sunday / Birthday Dinner" class="w-full px-3 py-2 rounded-xl border border-stone-300 bg-white text-stone-800">
+                            </div>
+                        </div>
+                    </div>
+
+                    <button onclick="enquirePartyWhatsApp()" class="w-full bg-crimson hover:bg-crimson-light text-white font-bold py-3.5 px-4 rounded-2xl shadow-md transition flex items-center justify-center gap-2 text-sm">
+                        <i class="fa-brands fa-whatsapp text-xl text-whatsapp"></i>
+                        <span>Get Party Quote on WhatsApp</span>
+                    </button>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- SECTION 2: TODAY'S HOMESTYLE MENU (WHATSAPP ORDERING) -->
+        <section id="daily-menu-section" class="space-y-5">
+            <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-2 border-b border-stone-200 pb-3">
+                <div>
+                    <span class="text-xs font-extrabold uppercase tracking-wider text-crimson">Today's Kitchen Menu</span>
+                    <h2 class="font-tamil text-2xl sm:text-3xl font-extrabold text-forest">
+                        இன்றைய வீட்டுச் சாப்பாடு &amp; டிபன்
+                    </h2>
+                </div>
+                <p class="text-xs text-stone-500">
+                    Select quantities below and send your order directly on WhatsApp
+                </p>
+            </div>
+
+            <!-- Sticky Category Tabs -->
+            <div class="sticky top-0 z-30 bg-cream/95 backdrop-blur-md py-2.5 -mx-4 px-4 border-b border-stone-200/80">
+                <div class="flex items-center gap-2 overflow-x-auto no-scrollbar">
+                    <button onclick="filterCategory('all')" id="cat-btn-all" class="cat-filter-btn px-4 py-2 rounded-full text-xs sm:text-sm font-bold transition whitespace-nowrap bg-forest text-white shadow-xs">
+                        All Items
+                    </button>
+                    <button onclick="filterCategory('breakfast')" id="cat-btn-breakfast" class="cat-filter-btn px-4 py-2 rounded-full text-xs sm:text-sm font-bold transition whitespace-nowrap bg-white border border-stone-200 text-stone-700 hover:bg-amber-50">
+                        <i class="fa-solid fa-mug-hot text-amber-600 mr-1"></i> Breakfast / டிபன்
+                    </button>
+                    <button onclick="filterCategory('lunch')" id="cat-btn-lunch" class="cat-filter-btn px-4 py-2 rounded-full text-xs sm:text-sm font-bold transition whitespace-nowrap bg-white border border-stone-200 text-stone-700 hover:bg-emerald-50">
+                        <i class="fa-solid fa-leaf text-forest mr-1"></i> Lunch Meals / மதிய உணவு
+                    </button>
+                    <button onclick="filterCategory('nonveg')" id="cat-btn-nonveg" class="cat-filter-btn px-4 py-2 rounded-full text-xs sm:text-sm font-bold transition whitespace-nowrap bg-white border border-stone-200 text-stone-700 hover:bg-rose-50">
+                        <i class="fa-solid fa-drumstick-bite text-crimson mr-1"></i> Non-Veg Specials / அசைவம்
+                    </button>
+                    <button onclick="filterCategory('dinner')" id="cat-btn-dinner" class="cat-filter-btn px-4 py-2 rounded-full text-xs sm:text-sm font-bold transition whitespace-nowrap bg-white border border-stone-200 text-stone-700 hover:bg-indigo-50">
+                        <i class="fa-solid fa-moon text-indigo-600 mr-1"></i> Dinner / இரவு உணவு
+                    </button>
+                </div>
+            </div>
+
+            <!-- Menu Cards Container -->
+            <div id="menu-grid-container" class="space-y-8">
+                <!-- Rendered via JS -->
+            </div>
+        </section>
+
+        <!-- SECTION 3: INTERACTIVE GOOGLE MAPS LOCATION CARD -->
+        <section aria-labelledby="location-heading" class="bg-white rounded-3xl border-2 border-amber-200/90 shadow-md overflow-hidden">
+            <div class="grid grid-cols-1 lg:grid-cols-12">
+                <!-- Stylized Map Preview Banner -->
+                <div class="lg:col-span-5 relative bg-gradient-to-br from-emerald-100 via-teal-50 to-amber-100 p-6 flex flex-col justify-between min-h-[210px] border-b lg:border-b-0 lg:border-r border-amber-200">
+                    <!-- Decorative Map Grid Lines -->
+                    <div class="absolute inset-0 opacity-25 pointer-events-none" style="background-image: radial-gradient(#1B4332 1px, transparent 1px), linear-gradient(to right, rgba(27,67,50,0.12) 1px, transparent 1px), linear-gradient(to bottom, rgba(27,67,50,0.12) 1px, transparent 1px); background-size: 24px 24px;"></div>
+
+                    <div class="relative z-10 flex items-center justify-between">
+                        <span class="inline-flex items-center gap-1.5 bg-white/95 text-forest text-[11px] font-extrabold px-3 py-1 rounded-full shadow-2xs border border-emerald-200">
+                            <i class="fa-solid fa-compass text-crimson"></i> VALLIYUR KITCHEN LOCATION
+                        </span>
+                        <span class="bg-forest text-marigold text-[10px] font-bold px-2.5 py-0.5 rounded-full">
+                            Takeaway &amp; Delivery
+                        </span>
+                    </div>
+
+                    <!-- Center Animated Location Pin -->
+                    <div class="relative z-10 my-4 flex flex-col items-center text-center">
+                        <div class="w-14 h-14 rounded-full bg-crimson text-white flex items-center justify-center shadow-lg ring-8 ring-crimson/15 mb-2">
+                            <i class="fa-solid fa-location-dot text-2xl text-marigold"></i>
+                        </div>
+                        <span class="bg-white/95 backdrop-blur-xs text-stone-900 font-extrabold text-xs px-3.5 py-1 rounded-full shadow-xs border border-stone-200">
+                            LAKSHMI HOMEMESS • Valliyur
+                        </span>
+                    </div>
+
+                    <p class="relative z-10 text-[11px] text-center font-semibold text-forest">
+                        Antony Compound, 112C, 3rd Street TB Road, Kamaraj Nagar
+                    </p>
+                </div>
+
+                <!-- Address Details & Action Buttons -->
+                <div class="lg:col-span-7 p-6 sm:p-7 flex flex-col justify-between gap-5">
+                    <div class="space-y-2">
+                        <span class="text-xs font-extrabold uppercase tracking-wider text-crimson">Find Us in Valliyur</span>
+                        <h2 id="location-heading" class="font-tamil text-xl sm:text-2xl font-extrabold text-forest">
+                            காமராஜ் நகர் 3-வது தெரு, வள்ளியூர்
+                        </h2>
+                        <p class="text-sm font-semibold text-stone-800">
+                            Kamaraj Nagar 3rd Street (Antony Compound, 112C, TB Road), Valliyur, Vadakkuvalliyur, Tamil Nadu 627117
+                        </p>
+                        <p class="text-xs text-stone-600 leading-relaxed">
+                            Visit us for fresh hot takeaway meals &amp; tiffin, or tap below for exact GPS navigation and customer reviews on Google Maps.
+                        </p>
+                    </div>
+
+                    <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
+                        <a href="https://maps.app.goo.gl/5KKhLCYmRBTZXvYo9" target="_blank" rel="noopener noreferrer" class="js-map-link flex-1 bg-forest hover:bg-forest-light text-white font-extrabold py-3.5 px-5 rounded-2xl shadow-md transition flex items-center justify-center gap-2 text-xs sm:text-sm">
+                            <i class="fa-solid fa-map-location-dot text-marigold text-base"></i>
+                            <span>Open Location in Google Maps</span>
+                        </a>
+                        <a href="https://maps.app.goo.gl/5KKhLCYmRBTZXvYo9" target="_blank" rel="noopener noreferrer" class="js-map-link flex-1 bg-marigold hover:bg-amber-400 text-stone-950 font-extrabold py-3.5 px-5 rounded-2xl shadow-sm border border-amber-400 transition flex items-center justify-center gap-2 text-xs sm:text-sm">
+                            <i class="fa-solid fa-diamond-turn-right text-crimson text-base"></i>
+                            <span>Get Directions</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="banana-leaf-bg text-white rounded-3xl p-6 sm:p-8 shadow-lg mt-12">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
+                <div class="space-y-2">
+                    <div class="inline-flex items-center gap-2 bg-marigold text-stone-950 text-xs font-extrabold px-3 py-1 rounded-full">
+                        <i class="fa-solid fa-house-chimney"></i> LAKSHMI HOMEMESS
+                    </div>
+                    <h3 class="font-tamil text-lg sm:text-xl font-bold text-white">
+                        முகவரி: காமராஜ் நகர் 3-வது தெரு, வள்ளியூர்
+                    </h3>
+                    <p class="text-xs text-emerald-100 leading-relaxed">
+                        Kamaraj Nagar 3rd Street, Valliyur • Antony Compound, 112C, 3rd Street TB Road, Vadakkuvalliyur, Tamil Nadu 627117
+                    </p>
+                    <div class="pt-2 flex flex-wrap gap-3">
+                        <a href="https://maps.app.goo.gl/5KKhLCYmRBTZXvYo9" target="_blank" rel="noopener noreferrer" class="js-map-link inline-flex items-center gap-1.5 bg-white/15 hover:bg-white/25 text-white text-xs font-bold px-3.5 py-2 rounded-xl transition">
+                            <i class="fa-solid fa-location-dot text-marigold"></i> Open in Google Maps
+                        </a>
+                        <button onclick="handleOwnerButtonClick()" class="inline-flex items-center gap-1.5 bg-white/10 hover:bg-white/20 text-emerald-100 text-xs font-semibold px-3.5 py-2 rounded-xl transition">
+                            <i class="fa-solid fa-gear"></i> Owner Menu Settings
+                        </button>
+                    </div>
+                </div>
+
+                <div class="bg-black/25 rounded-2xl p-4 sm:p-5 border border-white/10 text-center sm:text-right space-y-1.5">
+                    <p class="font-tamil text-xs text-marigold font-bold">தொடர்புக்கு / WhatsApp ஆர்டர் செய்ய:</p>
+                    <a href="https://wa.me/919597871106" id="footer-wa-link" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-2xl sm:text-3xl font-extrabold text-white hover:text-marigold transition">
+                        <i class="fa-brands fa-whatsapp text-whatsapp"></i>
+                        <span id="footer-phone-display">9597871106</span>
+                    </a>
+                    <p class="text-[11px] text-emerald-200">
+                        Open Daily: 7:30 AM – 9:00 PM • Delivery &amp; Takeaway Available
+                    </p>
+                </div>
+            </div>
+        </footer>
+    </main>
+
+    <!-- Sticky Bottom Cart Bar -->
+    <div id="bottom-cart-bar" class="fixed bottom-0 inset-x-0 z-40 p-3 sm:p-4 pointer-events-none transition-transform duration-300 translate-y-full">
+        <div class="max-w-4xl mx-auto pointer-events-auto">
+            <div class="bg-forest text-white rounded-2xl shadow-2xl p-3.5 sm:px-6 flex items-center justify-between gap-4 border-2 border-marigold/70">
+                <div class="flex items-center gap-3">
+                    <div class="relative w-11 h-11 rounded-xl bg-white/15 flex items-center justify-center">
+                        <i class="fa-solid fa-bowl-food text-marigold text-lg"></i>
+                        <span id="cart-count-badge" class="absolute -top-1.5 -right-1.5 bg-crimson text-white text-xs font-extrabold w-5 h-5 rounded-full flex items-center justify-center border border-white">0</span>
+                    </div>
+                    <div>
+                        <p class="text-xs text-emerald-200 font-medium"><span id="cart-items-label">0 items</span> in basket</p>
+                        <p class="text-lg sm:text-xl font-extrabold">₹<span id="cart-total-label">0</span></p>
+                    </div>
+                </div>
+                <button onclick="openCheckoutModal()" class="bg-whatsapp hover:bg-whatsappDark text-white font-extrabold px-5 py-3 rounded-xl shadow-lg transition flex items-center gap-2 text-sm sm:text-base">
+                    <span>Order via WhatsApp</span>
+                    <i class="fa-brands fa-whatsapp text-lg"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Checkout Modal -->
+    <div id="checkout-modal" class="fixed inset-0 z-50 hidden">
+        <div onclick="closeCheckoutModal()" class="fixed inset-0 bg-stone-950/65 backdrop-blur-xs"></div>
+        <div class="fixed inset-x-0 bottom-0 sm:inset-auto sm:top-1/2 sm:left-1/2 sm:-translate-x-1/2 sm:-translate-y-1/2 w-full sm:max-w-lg bg-cream rounded-t-3xl sm:rounded-3xl shadow-2xl max-h-[90vh] flex flex-col overflow-hidden border border-stone-200">
+            
+            <div class="bg-forest text-white px-5 py-4 flex items-center justify-between shrink-0">
+                <div class="flex items-center gap-2.5">
+                    <i class="fa-brands fa-whatsapp text-whatsapp text-2xl"></i>
+                    <div>
+                        <h3 class="font-bold text-base sm:text-lg leading-tight">Confirm WhatsApp Order</h3>
+                        <p class="text-xs text-emerald-200">LAKSHMI HOMEMESS • Valliyur</p>
+                    </div>
+                </div>
+                <button onclick="closeCheckoutModal()" class="w-8 h-8 rounded-full bg-white/15 hover:bg-white/25 flex items-center justify-center text-white">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+
+            <div class="p-5 overflow-y-auto space-y-5 flex-1">
+                <!-- Selected Items Summary -->
+                <div class="bg-white rounded-2xl border border-stone-200 p-4">
+                    <div class="flex items-center justify-between pb-2 mb-3 border-b border-stone-100">
+                        <span class="text-xs font-extrabold uppercase tracking-wider text-stone-500">Your Food Items</span>
+                        <button type="button" onclick="clearCart()" class="text-xs font-bold text-crimson hover:underline">Clear All</button>
+                    </div>
+                    <div id="checkout-items-container" class="space-y-3 text-sm"></div>
+                    <div class="mt-4 pt-3 border-t border-dashed border-stone-300 flex items-center justify-between font-extrabold text-base">
+                        <span>Total Amount</span>
+                        <span class="text-forest text-xl">₹<span id="checkout-modal-total">0</span></span>
+                    </div>
+                </div>
+
+                <!-- Customer Details Form -->
+                <form onsubmit="submitWhatsAppOrder(event)" class="space-y-4">
+                    <div>
+                        <label class="block text-xs font-extrabold uppercase tracking-wider text-stone-600 mb-2">Delivery / Pickup Mode *</label>
+                        <div class="grid grid-cols-2 gap-2.5">
+                            <label class="cursor-pointer">
+                                <input type="radio" name="deliveryMode" value="Home Delivery (Valliyur)" class="peer sr-only" checked onchange="handleDeliveryModeChange()">
+                                <div class="p-3 rounded-xl border-2 border-stone-200 bg-white peer-checked:border-forest peer-checked:bg-forest-pale text-center transition">
+                                    <i class="fa-solid fa-motorcycle text-forest block mb-1"></i>
+                                    <span class="text-xs sm:text-sm font-bold text-stone-800">Home Delivery</span>
+                                </div>
+                            </label>
+                            <label class="cursor-pointer">
+                                <input type="radio" name="deliveryMode" value="Takeaway / Direct Pickup" class="peer sr-only" onchange="handleDeliveryModeChange()">
+                                <div class="p-3 rounded-xl border-2 border-stone-200 bg-white peer-checked:border-forest peer-checked:bg-forest-pale text-center transition">
+                                    <i class="fa-solid fa-bag-shopping text-forest block mb-1"></i>
+                                    <span class="text-xs sm:text-sm font-bold text-stone-800">Takeaway / Pickup</span>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label for="order-cust-name" class="block text-xs font-extrabold uppercase tracking-wider text-stone-600 mb-1">Your Name *</label>
+                        <input type="text" id="order-cust-name" required placeholder="Enter your name" class="w-full px-3.5 py-2.5 rounded-xl border border-stone-300 bg-white text-sm focus:outline-none focus:border-forest">
+                    </div>
+
+                    <div id="order-address-wrapper">
+                        <label for="order-cust-address" class="block text-xs font-extrabold uppercase tracking-wider text-stone-600 mb-1">Delivery Address / Landmark in Valliyur *</label>
+                        <textarea id="order-cust-address" rows="2" required placeholder="Street name, House No, nearby landmark in Valliyur..." class="w-full px-3.5 py-2.5 rounded-xl border border-stone-300 bg-white text-sm focus:outline-none focus:border-forest"></textarea>
+                    </div>
+
+                    <div>
+                        <label for="order-cust-note" class="block text-xs font-extrabold uppercase tracking-wider text-stone-600 mb-1">Cooking Note / Delivery Time (Optional)</label>
+                        <input type="text" id="order-cust-note" placeholder="e.g., Need by 1:00 PM, less spicy..." class="w-full px-3.5 py-2.5 rounded-xl border border-stone-300 bg-white text-sm focus:outline-none focus:border-forest">
+                    </div>
+
+                    <button type="submit" class="w-full bg-whatsapp hover:bg-whatsappDark text-white font-extrabold py-3.5 px-6 rounded-2xl shadow-lg transition flex items-center justify-center gap-2.5 text-base">
+                        <i class="fa-brands fa-whatsapp text-xl"></i>
+                        <span>Send Order on WhatsApp</span>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Owner PIN Verification Modal -->
+    <div id="owner-pin-modal" class="fixed inset-0 z-50 hidden">
+        <div onclick="closePinModal()" class="fixed inset-0 bg-stone-950/65 backdrop-blur-xs"></div>
+        <div class="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90%] max-w-sm bg-white rounded-3xl p-6 shadow-2xl border border-stone-200 space-y-4">
+            <div class="flex items-center justify-between">
+                <h3 class="font-extrabold text-lg text-stone-900 flex items-center gap-2">
+                    <i class="fa-solid fa-lock text-crimson"></i> Owner Menu Access
+                </h3>
+                <button onclick="closePinModal()" class="text-stone-400 hover:text-stone-700">
+                    <i class="fa-solid fa-xmark text-lg"></i>
+                </button>
+            </div>
+            <p class="text-xs text-stone-600 leading-relaxed">
+                Enter Owner PIN to add new dishes, edit prices, or toggle availability. <br>
+                <span class="inline-block mt-1 bg-amber-100 text-amber-900 font-bold px-2 py-0.5 rounded">Default PIN: 1106</span>
+            </p>
+            <form onsubmit="verifyOwnerPin(event)" class="space-y-3">
+                <input type="password" id="owner-pin-input" maxlength="6" required placeholder="Enter 4-digit PIN (1106)" class="w-full px-4 py-3 rounded-xl border border-stone-300 text-center font-mono text-lg tracking-widest focus:outline-none focus:border-forest">
+                <button type="submit" class="w-full bg-forest hover:bg-forest-light text-white font-bold py-3 rounded-xl shadow transition text-sm">
+                    Unlock Owner Mode
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="fixed top-5 right-5 z-50 hidden">
+        <div class="bg-stone-900 text-white text-xs sm:text-sm font-semibold px-4 py-3 rounded-xl shadow-xl flex items-center gap-2 border border-stone-700">
+            <i class="fa-solid fa-circle-check text-whatsapp"></i>
+            <span id="toast-text">Saved!</span>
+        </div>
+    </div>
+
+    <script>
+        // ============================================================
+        // 1. DEFAULT DATA (Modeled after LAKSHMI HOMEMESS Flyer)
+        // ============================================================
+        const DEFAULT_PHONE = '9597871106';
+        const DEFAULT_MAP_LINK = 'https://maps.app.goo.gl/5KKhLCYmRBTZXvYo9';
+        const OWNER_PIN = '1106';
+
+        const DEFAULT_MENU = [
+            {
+                id: 'item-1',
+                category: 'lunch',
+                diet: 'veg',
+                name: 'Homely Full Veg Meals (வீட்டுச் சாப்பாடு)',
+                desc: 'Steamed Ponni Rice, Drumstick Sambar, Pepper Rasam, Kootu, Poriyal, Appalam, Pickle & Buttermilk on banana leaf style.',
+                price: 90,
+                available: true,
+                badge: 'Bestseller'
+            },
+            {
+                id: 'item-2',
+                category: 'nonveg',
+                diet: 'nonveg',
+                name: 'Homestyle Chicken Kuzhambu Meals (கோழி குழம்பு சாப்பாடு)',
+                desc: 'Full meals served with traditional village-style spicy country/broiler chicken gravy, rasam, poriyal & appalam.',
+                price: 140,
+                available: true,
+                badge: 'Amma Special'
+            },
+            {
+                id: 'item-3',
+                category: 'nonveg',
+                diet: 'nonveg',
+                name: 'Chicken Fry / Leg Piece Fry (சிக்கன் வறுவல்)',
+                desc: 'Crispy masala-marinated chicken fry cooked with curry leaves & freshly ground spices.',
+                price: 110,
+                available: true,
+                badge: ''
+            },
+            {
+                id: 'item-4',
+                category: 'lunch',
+                diet: 'veg',
+                name: 'Curd Rice with Homemade Pickle (தயிர் சாதம்)',
+                desc: 'Creamy tempered curd rice garnished with curry leaves, ginger & homemade mango pickle.',
+                price: 45,
+                available: true,
+                badge: ''
+            },
+            {
+                id: 'item-5',
+                category: 'breakfast',
+                diet: 'veg',
+                name: 'Idli (2 pcs) with Sambar & Chutney (இட்லி)',
+                desc: 'Soft fluffy steamed homemade idlis served with hot arachuvitta sambar & fresh coconut chutney.',
+                price: 30,
+                available: true,
+                badge: 'Morning Fresh'
+            },
+            {
+                id: 'item-6',
+                category: 'breakfast',
+                diet: 'veg',
+                name: 'Ghee Roast / Homely Dosa (நெய் ரோஸ்ட் / தோசை)',
+                desc: 'Golden crispy dosa roasted with pure ghee, served with sambar & 2 varieties of chutney.',
+                price: 55,
+                available: true,
+                badge: ''
+            },
+            {
+                id: 'item-7',
+                category: 'dinner',
+                diet: 'veg',
+                name: 'Chapati (2 pcs) with Veg Kurma (சப்பாத்தி)',
+                desc: 'Soft whole-wheat homemade chapatis served with rich coconut-vegetable kurma.',
+                price: 50,
+                available: true,
+                badge: 'Light Dinner'
+            },
+            {
+                id: 'item-8',
+                category: 'dinner',
+                diet: 'nonveg',
+                name: 'Chapati / Parotta with Chicken Salna (சிக்கன் சால்னா)',
+                desc: '2 soft flatbreads served with flavorful Tirunelveli-style chicken salna.',
+                price: 80,
+                available: true,
+                badge: 'Popular'
+            }
+        ];
+
+        const DEFAULT_REVIEWS = [
+            {
+                author: 'Suresh Kumar • Valliyur',
+                rating: 5,
+                time: 'Google Review',
+                text: '“Genuine home food taste! Especially for bachelors staying in Valliyur, Lakshmi Homemess feels just like eating at home. Very clean and hygienic.”'
+            },
+            {
+                author: 'Priya Dharshini • Vadakkuvalliyur',
+                rating: 5,
+                time: 'Google Review',
+                text: '“Amma kai manam! Their sambar, poriyal and chicken kuzhambu are super fresh without any heavy oil or artificial masala. Highly recommended.”'
+            },
+            {
+                author: 'Karthikeyan R. • College Student',
+                rating: 5,
+                time: 'Google Review',
+                text: '“Best monthly mess food in Valliyur. Always on time and very affordable for students. Both veg and non-veg dishes taste amazing.”'
+            }
+        ];
+
+        const CATEGORY_META = {
+            breakfast: { title: 'Breakfast / காலை டிபன்', icon: 'fa-mug-hot', color: 'text-amber-700 bg-amber-100' },
+            lunch: { title: 'Lunch Meals / மதிய உணவு', icon: 'fa-leaf', color: 'text-forest bg-emerald-100' },
+            nonveg: { title: 'Non-Veg Specials / அசைவ உணவுகள்', icon: 'fa-drumstick-bite', color: 'text-crimson bg-rose-100' },
+            dinner: { title: 'Dinner / இரவு உணவு', icon: 'fa-moon', color: 'text-indigo-700 bg-indigo-100' }
+        };
+
+        // ============================================================
+        // 2. APPLICATION STATE
+        // ============================================================
+        let storePhone = localStorage.getItem('lhm_phone') || DEFAULT_PHONE;
+        let storeMapLink = localStorage.getItem('lhm_map_link') || DEFAULT_MAP_LINK;
+        let menuItems = JSON.parse(localStorage.getItem('lhm_menu')) || JSON.parse(JSON.stringify(DEFAULT_MENU));
+        let reviews = JSON.parse(localStorage.getItem('lhm_reviews')) || JSON.parse(JSON.stringify(DEFAULT_REVIEWS));
+        let cart = {};
+        let currentCategory = 'all';
+        let isOwnerMode = false;
+        let currentReviewIdx = 0;
+        let reviewInterval;
+
+        // ============================================================
+        // 3. INITIALIZE
+        // ============================================================
+        document.addEventListener('DOMContentLoaded', () => {
+            syncPhoneUI();
+            syncMapLinkUI();
+            renderMenu();
+            updateCartBar();
+            startGoogleReviewsCarousel();
+        });
+
+        function saveState() {
+            localStorage.setItem('lhm_phone', storePhone);
+            localStorage.setItem('lhm_map_link', storeMapLink);
+            localStorage.setItem('lhm_menu', JSON.stringify(menuItems));
+            localStorage.setItem('lhm_reviews', JSON.stringify(reviews));
+        }
+
+        function syncPhoneUI() {
+            const clean10 = storePhone.replace(/\D/g, '').slice(-10) || DEFAULT_PHONE;
+            storePhone = clean10;
+            const spaced = `${clean10.slice(0, 5)} ${clean10.slice(5)}`;
+            const waHref = `https://wa.me/91${clean10}`;
+
+            document.getElementById('top-phone-display').textContent = spaced;
+            document.getElementById('top-phone-link').href = `tel:+91${clean10}`;
+            document.getElementById('hero-phone-display').textContent = clean10;
+            document.getElementById('hero-wa-link').href = waHref;
+            document.getElementById('footer-phone-display').textContent = clean10;
+            document.getElementById('footer-wa-link').href = waHref;
+            document.getElementById('owner-wa-input').value = clean10;
+        }
+
+        function syncMapLinkUI() {
+            const validLink = (storeMapLink && storeMapLink.trim()) ? storeMapLink.trim() : DEFAULT_MAP_LINK;
+            storeMapLink = validLink;
+
+            document.querySelectorAll('.js-map-link').forEach(el => {
+                el.href = validLink;
+            });
+
+            const ownerMapInput = document.getElementById('owner-map-input');
+            if (ownerMapInput) {
+                ownerMapInput.value = validLink;
+            }
+        }
+
+        // ============================================================
+        // 4. GOOGLE REVIEWS AUTO-SHOWCASE
+        // ============================================================
+        function startGoogleReviewsCarousel() {
+            renderReviewSlide();
+            clearInterval(reviewInterval);
+            reviewInterval = setInterval(() => {
+                currentReviewIdx = (currentReviewIdx + 1) % reviews.length;
+                renderReviewSlide();
+            }, 4500);
+        }
+
+        function renderReviewSlide() {
+            const display = document.getElementById('google-review-display');
+            const dots = document.getElementById('review-dots');
+            if (!reviews.length) return;
+
+            const rev = reviews[currentReviewIdx % reviews.length];
+            display.innerHTML = `
+                <p class="text-xs sm:text-sm text-stone-700 italic leading-relaxed">
+                    ${rev.text}
+                </p>
+                <div class="mt-3 flex items-center justify-between">
+                    <div>
+                        <p class="text-xs font-extrabold text-stone-900">${rev.author}</p>
+                        <p class="text-[11px] text-emerald-700 font-semibold"><i class="fa-solid fa-circle-check mr-1"></i>${rev.time}</p>
+                    </div>
+                </div>
+            `;
+
+            dots.innerHTML = reviews.map((_, idx) => `
+                <button onclick="selectReviewSlide(${idx})" aria-label="Review ${idx + 1}" class="h-2 rounded-full transition-all ${idx === currentReviewIdx ? 'w-6 bg-forest' : 'w-2 bg-stone-300'}"></button>
+            `).join('');
+        }
+
+        function selectReviewSlide(idx) {
+            currentReviewIdx = idx;
+            renderReviewSlide();
+        }
+
+        // ============================================================
+        // 5. MENU RENDERING & OWNER INLINE EDITING
+        // ============================================================
+        function filterCategory(cat) {
+            currentCategory = cat;
+            document.querySelectorAll('.cat-filter-btn').forEach(btn => {
+                btn.classList.remove('bg-forest', 'text-white', 'shadow-xs');
+                btn.classList.add('bg-white', 'border', 'border-stone-200', 'text-stone-700');
+            });
+            const active = document.getElementById(`cat-btn-${cat}`);
+            if (active) {
+                active.classList.remove('bg-white', 'border', 'border-stone-200', 'text-stone-700');
+                active.classList.add('bg-forest', 'text-white', 'shadow-xs');
+            }
+            renderMenu();
+        }
+
+        function renderMenu() {
+            const container = document.getElementById('menu-grid-container');
+            container.innerHTML = '';
+
+            const categoriesToRender = currentCategory === 'all'
+                ? ['lunch', 'nonveg', 'breakfast', 'dinner']
+                : [currentCategory];
+
+            categoriesToRender.forEach(catKey => {
+                const items = menuItems.filter(i => i.category === catKey);
+                if (items.length === 0) return;
+
+                const meta = CATEGORY_META[catKey];
+                const section = document.createElement('div');
+                section.className = 'space-y-3.5';
+
+                section.innerHTML = `
+                    <div class="flex items-center gap-2.5">
+                        <span class="w-8 h-8 rounded-xl ${meta.color} flex items-center justify-center text-sm">
+                            <i class="fa-solid ${meta.icon}"></i>
+                        </span>
+                        <h3 class="font-tamil text-lg sm:text-xl font-extrabold text-stone-900">${meta.title}</h3>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        ${items.map(item => buildMenuCardHTML(item)).join('')}
+                    </div>
+                `;
+                container.appendChild(section);
+            });
+        }
+
+        function buildMenuCardHTML(item) {
+            const qty = cart[item.id] || 0;
+            const isVeg = item.diet === 'veg';
+
+            // OWNER EDITABLE CARD VIEW
+            if (isOwnerMode) {
+                return `
+                    <div class="bg-white rounded-2xl p-4 border-2 ${item.available ? 'border-amber-300' : 'border-rose-300 bg-rose-50/40'} shadow-xs space-y-3">
+                        <div class="flex items-center justify-between gap-2">
+                            <span class="text-[11px] font-bold px-2 py-0.5 rounded ${isVeg ? 'bg-emerald-100 text-forest' : 'bg-rose-100 text-crimson'}">
+                                ${isVeg ? '● Pure Veg' : '▲ Non-Veg'}
+                            </span>
+                            <div class="flex items-center gap-2">
+                                <button onclick="toggleItemAvailability('${item.id}')" class="text-xs font-bold px-2.5 py-1 rounded-lg ${item.available ? 'bg-emerald-100 text-forest' : 'bg-rose-600 text-white'}">
+                                    ${item.available ? 'In Stock ✓' : 'Sold Out ✕'}
+                                </button>
+                                <button onclick="deleteMenuItem('${item.id}')" class="w-7 h-7 rounded-lg bg-rose-100 text-rose-700 hover:bg-rose-200 flex items-center justify-center" title="Delete Dish">
+                                    <i class="fa-solid fa-trash-can text-xs"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="space-y-2">
+                            <div>
+                                <label class="text-[10px] font-bold uppercase text-stone-400">Dish Name</label>
+                                <input type="text" value="${item.name.replace(/"/g, '&quot;')}" onchange="editItemField('${item.id}', 'name', this.value)" class="w-full px-2.5 py-1.5 rounded-lg border border-stone-300 text-sm font-bold text-stone-900">
+                            </div>
+                            <div class="grid grid-cols-2 gap-2">
+                                <div>
+                                    <label class="text-[10px] font-bold uppercase text-stone-400">Price (₹)</label>
+                                    <input type="number" min="1" value="${item.price}" onchange="editItemField('${item.id}', 'price', Number(this.value))" class="w-full px-2.5 py-1.5 rounded-lg border border-stone-300 text-sm font-extrabold text-forest">
+                                </div>
+                                <div>
+                                    <label class="text-[10px] font-bold uppercase text-stone-400">Category</label>
+                                    <select onchange="editItemField('${item.id}', 'category', this.value)" class="w-full px-2 py-1.5 rounded-lg border border-stone-300 text-xs font-semibold bg-white">
+                                        <option value="breakfast" ${item.category === 'breakfast' ? 'selected' : ''}>Breakfast</option>
+                                        <option value="lunch" ${item.category === 'lunch' ? 'selected' : ''}>Lunch</option>
+                                        <option value="nonveg" ${item.category === 'nonveg' ? 'selected' : ''}>Non-Veg</option>
+                                        <option value="dinner" ${item.category === 'dinner' ? 'selected' : ''}>Dinner</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            }
+
+            // CUSTOMER ORDERING CARD VIEW
+            return `
+                <div class="bg-white rounded-2xl p-4 border border-stone-200 shadow-2xs hover:shadow-md transition flex flex-col justify-between gap-3 ${!item.available ? 'opacity-65' : ''}">
+                    <div>
+                        <div class="flex items-start justify-between gap-2 mb-1">
+                            <div class="flex items-center gap-2">
+                                <span class="w-4 h-4 border-2 ${isVeg ? 'border-emerald-600' : 'border-crimson'} flex items-center justify-center rounded-xs shrink-0" title="${isVeg ? 'Vegetarian' : 'Non-Vegetarian'}">
+                                    <span class="w-2 h-2 rounded-full ${isVeg ? 'bg-emerald-600' : 'bg-crimson'}"></span>
+                                </span>
+                                <h4 class="font-tamil font-bold text-stone-900 text-sm sm:text-base leading-snug">${item.name}</h4>
+                            </div>
+                        </div>
+                        ${item.badge ? `<span class="inline-block text-[10px] font-extrabold uppercase tracking-wider px-2 py-0.5 rounded bg-marigold/35 text-crimson mb-1.5">${item.badge}</span>` : ''}
+                        <p class="text-xs text-stone-500 leading-relaxed">${item.desc}</p>
+                    </div>
+
+                    <div class="flex items-center justify-between pt-2.5 border-t border-stone-100">
+                        <div>
+                            <span class="text-base sm:text-lg font-extrabold text-stone-900">₹${item.price}</span>
+                        </div>
+
+                        ${!item.available ? `
+                            <span class="text-xs font-bold text-rose-600 bg-rose-50 px-3 py-1.5 rounded-xl border border-rose-200">
+                                Sold Out Today
+                            </span>
+                        ` : qty === 0 ? `
+                            <button onclick="changeCartQty('${item.id}', 1)" class="bg-forest-pale hover:bg-forest text-forest hover:text-white border border-forest/30 font-extrabold text-xs sm:text-sm px-4 py-2 rounded-xl transition flex items-center gap-1.5">
+                                <i class="fa-solid fa-plus text-xs"></i>
+                                <span>ADD</span>
+                            </button>
+                        ` : `
+                            <div class="flex items-center bg-forest text-white rounded-xl overflow-hidden shadow-xs">
+                                <button onclick="changeCartQty('${item.id}', -1)" class="px-3 py-1.5 hover:bg-forest-light transition font-bold">
+                                    <i class="fa-solid fa-minus text-xs"></i>
+                                </button>
+                                <span class="px-2.5 text-sm font-extrabold min-w-[28px] text-center">${qty}</span>
+                                <button onclick="changeCartQty('${item.id}', 1)" class="px-3 py-1.5 hover:bg-forest-light transition font-bold">
+                                    <i class="fa-solid fa-plus text-xs"></i>
+                                </button>
+                            </div>
+                        `}
+                    </div>
+                </div>
+            `;
+        }
+
+        // ============================================================
+        // 6. CART & WHATSAPP ORDERING
+        // ============================================================
+        function changeCartQty(id, delta) {
+            const next = (cart[id] || 0) + delta;
+            if (next <= 0) delete cart[id];
+            else cart[id] = next;
+            renderMenu();
+            updateCartBar();
+        }
+
+        function clearCart() {
+            cart = {};
+            renderMenu();
+            updateCartBar();
+            closeCheckoutModal();
+        }
+
+        function getCartDetails() {
+            let count = 0;
+            let total = 0;
+            const list = [];
+            for (const [id, qty] of Object.entries(cart)) {
+                const item = menuItems.find(m => m.id === id);
+                if (item && item.available && qty > 0) {
+                    const sub = item.price * qty;
+                    count += qty;
+                    total += sub;
+                    list.push({ ...item, qty, sub });
+                }
+            }
+            return { count, total, list };
+        }
+
+        function updateCartBar() {
+            const { count, total, list } = getCartDetails();
+            const bar = document.getElementById('bottom-cart-bar');
+            document.getElementById('cart-count-badge').textContent = count;
+            document.getElementById('cart-items-label').textContent = `${count} ${count === 1 ? 'item' : 'items'}`;
+            document.getElementById('cart-total-label').textContent = total;
+            document.getElementById('checkout-modal-total').textContent = total;
+
+            if (count > 0) bar.classList.remove('translate-y-full');
+            else bar.classList.add('translate-y-full');
+
+            const container = document.getElementById('checkout-items-container');
+            container.innerHTML = list.map(i => `
+                <div class="flex items-center justify-between gap-2">
+                    <div class="flex-1">
+                        <p class="font-bold text-stone-800 leading-tight">${i.name}</p>
+                        <p class="text-xs text-stone-500">₹${i.price} × ${i.qty}</p>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <div class="flex items-center border border-stone-200 rounded-lg bg-stone-50">
+                            <button type="button" onclick="changeCartQty('${i.id}', -1)" class="px-2 py-0.5 font-bold text-stone-600">-</button>
+                            <span class="px-1.5 text-xs font-bold">${i.qty}</span>
+                            <button type="button" onclick="changeCartQty('${i.id}', 1)" class="px-2 py-0.5 font-bold text-stone-600">+</button>
+                        </div>
+                        <span class="font-extrabold text-stone-900 w-14 text-right">₹${i.sub}</span>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function openCheckoutModal() {
+            const { count } = getCartDetails();
+            if (count === 0) return;
+            updateCartBar();
+            document.getElementById('checkout-modal').classList.remove('hidden');
+        }
+
+        function closeCheckoutModal() {
+            document.getElementById('checkout-modal').classList.add('hidden');
+        }
+
+        function handleDeliveryModeChange() {
+            const mode = document.querySelector('input[name="deliveryMode"]:checked').value;
+            const wrapper = document.getElementById('order-address-wrapper');
+            const input = document.getElementById('order-cust-address');
+            if (mode.includes('Home Delivery')) {
+                wrapper.classList.remove('hidden');
+                input.required = true;
+            } else {
+                wrapper.classList.add('hidden');
+                input.required = false;
+            }
+        }
+
+        function submitWhatsAppOrder(e) {
+            e.preventDefault();
+            const { total, list } = getCartDetails();
+            if (!list.length) return;
+
+            const name = document.getElementById('order-cust-name').value.trim();
+            const mode = document.querySelector('input[name="deliveryMode"]:checked').value;
+            const address = document.getElementById('order-cust-address').value.trim();
+            const note = document.getElementById('order-cust-note').value.trim();
+
+            const msgLines = [
+                `🍛 *LAKSHMI HOMEMESS - NEW ORDER* 🍛`,
+                `----------------------------------`,
+                `*Customer:* ${name}`,
+                `*Mode:* ${mode}`,
+                mode.includes('Home Delivery')
+                    ? `*Address:* ${address}`
+                    : `*Pickup:* Kamaraj Nagar 3rd St, Valliyur`,
+                note ? `*Note:* ${note}` : null,
+                `----------------------------------`,
+                `*ORDERED ITEMS:*`,
+                ...list.map((item, idx) => `${idx + 1}. ${item.name} × ${item.qty} = ₹${item.sub}`),
+                `----------------------------------`,
+                `*TOTAL PAYABLE: ₹${total}*`,
+                `----------------------------------`,
+                `Please confirm my order. Nandri! 🙏`
+            ].filter(Boolean);
+
+            const url = `https://wa.me/91${storePhone}?text=${encodeURIComponent(msgLines.join('\n'))}`;
+            window.open(url, '_blank', 'noopener,noreferrer');
+        }
+
+        // ============================================================
+        // 7. SUBSCRIPTION & PARTY ENQUIRIES (WHATSAPP ONLY, NO PRICES)
+        // ============================================================
+        function enquireSubscriptionWhatsApp() {
+            const duration = document.getElementById('sub-duration').value;
+            const diet = document.getElementById('sub-diet').value;
+            const meals = document.getElementById('sub-meals').value;
+
+            const lines = [
+                `🌿 *LAKSHMI HOMEMESS - MESS SUBSCRIPTION ENQUIRY* 🌿`,
+                `Vanakkam! I would like to know details about your homestyle food subscription plan in Valliyur:`,
+                `----------------------------------`,
+                `• *Plan Duration:* ${duration}`,
+                `• *Food Preference:* ${diet}`,
+                `• *Meals Needed:* ${meals}`,
+                `----------------------------------`,
+                `Please share plan details & availability. Thank you!`
+            ];
+
+            const url = `https://wa.me/91${storePhone}?text=${encodeURIComponent(lines.join('\n'))}`;
+            window.open(url, '_blank', 'noopener,noreferrer');
+        }
+
+        function enquirePartyWhatsApp() {
+            const menuType = document.getElementById('party-menu-type').value;
+            const guests = document.getElementById('party-guests').value;
+            const occasion = document.getElementById('party-occasion').value.trim();
+
+            const lines = [
+                `🎉 *LAKSHMI HOMEMESS - FUNCTION / PARTY ORDER ENQUIRY* 🎉`,
+                `Vanakkam! We would like to enquire about bulk homestyle food for an upcoming occasion:`,
+                `----------------------------------`,
+                `• *Menu Preference:* ${menuType}`,
+                `• *Estimated Guests:* ${guests}`,
+                occasion ? `• *Occasion / Date:* ${occasion}` : null,
+                `----------------------------------`,
+                `Please share menu options & details. Thank you!`
+            ].filter(Boolean);
+
+            const url = `https://wa.me/91${storePhone}?text=${encodeURIComponent(lines.join('\n'))}`;
+            window.open(url, '_blank', 'noopener,noreferrer');
+        }
+
+        // ============================================================
+        // 8. OWNER MODE CONTROLS
+        // ============================================================
+        function handleOwnerButtonClick() {
+            if (isOwnerMode) {
+                lockOwnerMode();
+            } else {
+                document.getElementById('owner-pin-input').value = '';
+                document.getElementById('owner-pin-modal').classList.remove('hidden');
+            }
+        }
+
+        function closePinModal() {
+            document.getElementById('owner-pin-modal').classList.add('hidden');
+        }
+
+        function verifyOwnerPin(e) {
+            e.preventDefault();
+            const entered = document.getElementById('owner-pin-input').value.trim();
+            if (entered === OWNER_PIN) {
+                isOwnerMode = true;
+                closePinModal();
+                document.getElementById('owner-panel').classList.remove('hidden');
+                document.getElementById('owner-status-badge').classList.remove('hidden');
+                document.getElementById('owner-btn-text').textContent = 'Close Owner Mode';
+                renderMenu();
+                showToast('Owner Mode Unlocked! You can now edit menu & prices.');
+            } else {
+                showToast('Incorrect PIN. Try 1106');
+            }
+        }
+
+        function lockOwnerMode() {
+            isOwnerMode = false;
+            document.getElementById('owner-panel').classList.add('hidden');
+            document.getElementById('owner-status-badge').classList.add('hidden');
+            document.getElementById('owner-btn-text').textContent = 'Owner Mode / நிர்வாகி';
+            renderMenu();
+            showToast('Owner Mode Locked');
+        }
+
+        function ownerAddMenuItem(e) {
+            e.preventDefault();
+            const name = document.getElementById('new-item-name').value.trim();
+            const price = Number(document.getElementById('new-item-price').value);
+            const category = document.getElementById('new-item-cat').value;
+            const desc = document.getElementById('new-item-desc').value.trim() || 'Freshly prepared homestyle dish from Lakshmi Homemess.';
+            const diet = document.getElementById('new-item-diet').value;
+
+            menuItems.unshift({
+                id: 'item-' + Date.now(),
+                category,
+                diet,
+                name,
+                desc,
+                price,
+                available: true,
+                badge: 'New Special'
+            });
+
+            saveState();
+            renderMenu();
+            e.target.reset();
+            showToast(`Added "${name}" (₹${price}) to menu!`);
+        }
+
+        function editItemField(id, field, value) {
+            const item = menuItems.find(i => i.id === id);
+            if (!item) return;
+            if (field === 'price' && (!value || value < 1)) return;
+            item[field] = value;
+            saveState();
+            updateCartBar();
+            showToast('Menu updated!');
+        }
+
+        function toggleItemAvailability(id) {
+            const item = menuItems.find(i => i.id === id);
+            if (!item) return;
+            item.available = !item.available;
+            if (!item.available) delete cart[id];
+            saveState();
+            renderMenu();
+            updateCartBar();
+            showToast(item.available ? 'Marked In Stock' : 'Marked Sold Out');
+        }
+
+        function deleteMenuItem(id) {
+            menuItems = menuItems.filter(i => i.id !== id);
+            delete cart[id];
+            saveState();
+            renderMenu();
+            updateCartBar();
+            showToast('Dish removed from menu');
+        }
+
+        function ownerUpdatePhone(e) {
+            e.preventDefault();
+            const val = document.getElementById('owner-wa-input').value.replace(/\D/g, '');
+            if (val.length !== 10) {
+                showToast('Enter a valid 10-digit mobile number');
+                return;
+            }
+            storePhone = val;
+            saveState();
+            syncPhoneUI();
+            showToast('WhatsApp order number updated!');
+        }
+
+        function ownerUpdateMapLink(e) {
+            e.preventDefault();
+            const val = document.getElementById('owner-map-input').value.trim();
+            if (!val) {
+                showToast('Please enter a valid Google Maps URL');
+                return;
+            }
+            storeMapLink = val;
+            saveState();
+            syncMapLinkUI();
+            showToast('Google Maps link updated across the site!');
+        }
+
+        function ownerAddReview(e) {
+            e.preventDefault();
+            const author = document.getElementById('new-rev-author').value.trim();
+            const text = document.getElementById('new-rev-text').value.trim();
+            reviews.unshift({
+                author,
+                rating: 5,
+                time: 'Google Review',
+                text: `“${text.replace(/^["“]|["”]$/g, '')}”`
+            });
+            saveState();
+            currentReviewIdx = 0;
+            renderReviewSlide();
+            e.target.reset();
+            showToast('New Google review published!');
+        }
+
+        function resetDefaultMenu() {
+            menuItems = JSON.parse(JSON.stringify(DEFAULT_MENU));
+            reviews = JSON.parse(JSON.stringify(DEFAULT_REVIEWS));
+            storePhone = DEFAULT_PHONE;
+            storeMapLink = DEFAULT_MAP_LINK;
+            cart = {};
+            saveState();
+            syncPhoneUI();
+            syncMapLinkUI();
+            renderMenu();
+            updateCartBar();
+            renderReviewSlide();
+            showToast('Restored default flyer menu & settings');
+        }
+
+        // ============================================================
+        // 9. TOAST HELPER
+        // ============================================================
+        let toastTimeout;
+        function showToast(msg) {
+            const el = document.getElementById('toast');
+            document.getElementById('toast-text').textContent = msg;
+            el.classList.remove('hidden');
+            clearTimeout(toastTimeout);
+            toastTimeout = setTimeout(() => el.classList.add('hidden'), 3000);
+        }
+    </script>
+</body>
+</html>
